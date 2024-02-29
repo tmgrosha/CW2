@@ -1,0 +1,17 @@
+#!/bin/bash
+
+scp rk@192.168.1.65:/home/rk/A/encrypted_data.bin encrypted_data.bin
+scp rk@192.168.1.65:/home/rk/A/encrypted_signature.bin encrypted_signature.bin
+
+openssl rsautl -decrypt -inkey private_key_a.pem -in encrypted_data.bin -out decrypted_data.>
+openssl rsautl -decrypt -inkey private_key_a.pem -in encrypted_signature.bin -out decrypted_>
+
+openssl dgst -sha256 -verify public_key_b.pem -signature decrypted_signature.bin decrypted_d>
+
+
+
+
+
+
+
+
